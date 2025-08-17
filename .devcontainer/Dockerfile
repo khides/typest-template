@@ -9,7 +9,7 @@ ENV TZ=Asia/Tokyo
 RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificates \
     libglib2.0-0 libxext6 libsm6 libxrender1 \
     git mercurial subversion sudo \
-    curl build-essential
+    curl build-essential unzip fontconfig
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
