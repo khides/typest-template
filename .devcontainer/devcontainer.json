@@ -1,0 +1,23 @@
+{
+  "name": "typst-template",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "dev",
+  "workspaceFolder": "/root/workspace",
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "myriad-dreamin.tinymist",
+        "tecosaur.latex-utilities",
+        "valentjn.vscode-ltex",
+        "xyz.local-history",
+        "donjayamanne.githistory",
+        "mhutchie.git-graph"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "fish"
+      }
+    }
+  },
+  "remoteUser": "root"
+}

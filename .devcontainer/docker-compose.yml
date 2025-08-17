@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  dev:
+    container_name: typst-template-dev
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    working_dir: /root/workspace
+    volumes:
+      - ..:/root/workspace:cached
+      - vscode-extensions:/root/.vscode-server/extensions
+      - vscode-extensions-insiders:/root/.vscode-server-insiders/extensions
+      - ~/.ssh:/root/.ssh:ro
+      - ~/.gitconfig:/root/.gitconfig:ro
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    command: /usr/bin/fish
+    environment:
+      - DISPLAY=${DISPLAY:-:0}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  vscode-extensions:
+  vscode-extensions-insiders:

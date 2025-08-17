@@ -1,0 +1,14 @@
+{
+  "name": "animal-irl",
+  "version": "0.0.1",
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "dev": "echo 'Development script not configured'",
+    "build": "echo 'Build script not configured'",
+    "test": "echo 'Test script not configured'"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-code": "^1.0.55"
+  }
+}
