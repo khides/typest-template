@@ -1,21 +1,85 @@
-# Security Policy
+# セキュリティポリシー / Security Policy
 
-## Supported Versions
+## サポートされているバージョン / Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+現在セキュリティアップデートがサポートされているバージョンは以下の通りです。
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| Version | Supported          | Notes |
+| ------- | ------------------ | ----- |
+| 0.0.x   | :white_check_mark: | 現在の開発版 |
 
-## Reporting a Vulnerability
+## セキュリティ脆弱性の報告 / Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+### 報告方法 / How to Report
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+セキュリティ上の脆弱性を発見した場合は、以下の手順で報告してください：
+
+1. **公開しない**: 脆弱性の詳細を公開Issue やプルリクエストに記載しないでください
+2. **プライベート報告**: GitHubのSecurity Advisoryを使用するか、リポジトリ管理者に直接連絡してください
+3. **詳細情報の提供**: 
+   - 脆弱性の概要
+   - 再現手順
+   - 影響範囲
+   - 可能であれば修正案
+
+### 対応時間 / Response Time
+
+- 初回応答: 48時間以内
+- 脆弱性の評価: 7日以内
+- 修正リリース: 重要度に応じて14-30日以内
+
+## セキュリティに関する考慮事項 / Security Considerations
+
+### Typstテンプレートのセキュリティ
+
+このプロジェクトはTypst文書テンプレートであり、以下の点にご注意ください：
+
+1. **外部リソース**: 
+   - テンプレートで外部URLから画像やデータを取得する場合は、信頼できるソースのみを使用してください
+   - 不明なソースからのテンプレートファイルはインポートしないでください
+
+2. **依存関係**:
+   - Node.js依存関係は定期的に更新してください
+   - `npm audit`を定期的に実行して脆弱性をチェックしてください
+
+3. **Docker環境**:
+   - Dev Containerを使用する場合は、公式のDockerイメージまたは信頼できるベースイメージを使用してください
+   - コンテナ内での権限昇格に注意してください
+
+### 推奨セキュリティプラクティス
+
+1. **定期的な更新**:
+   ```bash
+   # Node.js依存関係の更新
+   npm update
+   npm audit fix
+   
+   # Typstの更新
+   typst update
+   ```
+
+2. **ファイルパーミッション**:
+   - テンプレートファイルには適切な読み取り権限のみを設定
+   - 生成されたPDFファイルのアクセス権限を確認
+
+3. **機密情報の取り扱い**:
+   - 個人情報や機密データをテンプレートやサンプルファイルに含めない
+   - `.gitignore`で機密ファイルを除外する
+
+## 既知のセキュリティ問題 / Known Security Issues
+
+現在、既知のセキュリティ問題はありません。
+
+## セキュリティアップデート履歴 / Security Update History
+
+| Date | Version | Description |
+|------|---------|-------------|
+| 2024-12 | 0.0.1 | 初回リリース |
+
+## 連絡先 / Contact
+
+セキュリティに関する重要な問題については、GitHubのSecurity Advisoryを通じて報告してください。
+
+## 責任ある開示 / Responsible Disclosure
+
+私たちは責任ある脆弱性開示を支持しています。セキュリティ研究者の皆様には、発見した脆弱性を責任を持って報告していただくようお願いします。
