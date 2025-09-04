@@ -9,6 +9,6 @@
     "test": "echo 'Test script not configured'"
   },
   "dependencies": {
-    "@anthropic-ai/claude-code": "^1.0.55"
+    "@anthropic-ai/claude-code": "^1.0.87"
   }
 }
